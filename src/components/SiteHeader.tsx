@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 
 interface NavItem {
@@ -198,8 +199,8 @@ export default function SiteHeader() {
 
           {/* Icons */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexShrink: 0 }}>
-            <a
-              href="#account"
+            <Link
+              href="/login"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -218,7 +219,7 @@ export default function SiteHeader() {
                 <circle cx="12" cy="7" r="4" />
               </svg>
               <span className="hidden-mobile">Account</span>
-            </a>
+            </Link>
             <button
               onClick={openCart}
               style={{
