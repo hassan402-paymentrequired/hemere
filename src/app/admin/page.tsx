@@ -44,8 +44,8 @@ const statusColors: Record<Order['status'], { bg: string; color: string }> = {
 
 const navItems = [
   { label: 'Dashboard', icon: 'grid', href: '/admin', active: true },
-  { label: 'Orders', icon: 'package', href: '/admin' },
-  { label: 'Products', icon: 'tag', href: '/admin' },
+  { label: 'Orders', icon: 'package', href: '/admin/orders' },
+  { label: 'Products', icon: 'tag', href: '/admin/products' },
   { label: 'Customers', icon: 'users', href: '/admin' },
   { label: 'Analytics', icon: 'bar-chart', href: '/admin' },
   { label: 'Settings', icon: 'settings', href: '/admin' },
