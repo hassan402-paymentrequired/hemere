@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { useCart } from '@/context/CartContext';
 
 interface NavItem {
   label: string;
@@ -80,8 +81,8 @@ const navItems: NavItem[] = [
 export default function SiteHeader() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const { openCart, totalItems } = useCart();
 
   return (
     <>
@@ -218,8 +219,8 @@ export default function SiteHeader() {
               </svg>
               <span className="hidden-mobile">Account</span>
             </a>
-            <a
-              href="#cart"
+            <button
+              onClick={openCart}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -232,15 +233,41 @@ export default function SiteHeader() {
                 color: '#060606',
                 textDecoration: 'none',
                 position: 'relative',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 0,
               }}
+              aria-label="Open shopping bag"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <path d="M16 10a4 4 0 0 1-8 0" />
               </svg>
+              {totalItems > 0 && (
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '-6px',
+                    right: '-8px',
+                    background: '#060606',
+                    color: '#ffffff',
+                    borderRadius: '50%',
+                    width: '16px',
+                    height: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '9px',
+                    fontWeight: 600,
+                  }}
+                >
+                  {totalItems}
+                </span>
+              )}
               <span className="hidden-mobile">Cart</span>
-            </a>
+            </button>
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
