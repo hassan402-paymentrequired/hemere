@@ -1,5 +1,6 @@
 'use client';
 import React, { useRef, useEffect, useState } from 'react';
+import ProductQuickView, { QuickViewProduct } from '@/components/ProductQuickView';
 
 interface Product {
   id: number;
@@ -10,6 +11,8 @@ interface Product {
   alt: string;
   href: string;
   isNew?: boolean;
+  category?: string;
+  description?: string;
 }
 
 const newArrivals: Product[] = [
@@ -20,8 +23,10 @@ const newArrivals: Product[] = [
   price: '€ 185.00',
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_1389cd6c2-1772869406131.png",
   alt: 'Matte travertine decorative vessel with organic form, 28cm height',
-  href: '#product-1',
-  isNew: true
+  href: '/products/P-006',
+  isNew: true,
+  category: 'Home Accessories',
+  description: 'A hand-formed vessel in matte travertine stone. Each piece is unique, with natural variations in tone and texture. Perfect as a standalone object or paired with dried botanicals.'
 },
 {
   id: 2,
@@ -30,8 +35,10 @@ const newArrivals: Product[] = [
   price: '€ 68.00',
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_1465fbef0-1773056688173.png",
   alt: 'Luxury amber oud scented candle in glass vessel, 220g',
-  href: '#product-2',
-  isNew: true
+  href: '/products/P-010',
+  isNew: true,
+  category: 'Candles & Fragrance',
+  description: 'A rich, resinous amber oud fragrance in a hand-poured soy wax candle. 220g with an approximate burn time of 45 hours. The glass vessel can be repurposed after use.'
 },
 {
   id: 3,
@@ -40,7 +47,9 @@ const newArrivals: Product[] = [
   price: '€ 95.00',
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_1065d7918-1771884763956.png",
   alt: 'Ivory boucle cushion with textured weave, 50x50cm',
-  href: '#product-3'
+  href: '/products/P-002',
+  category: 'Textiles',
+  description: 'A generously filled cushion in tightly woven ivory boucle. Feather and down inner. Removable cover with concealed zip.'
 },
 {
   id: 4,
@@ -49,8 +58,10 @@ const newArrivals: Product[] = [
   price: '€ 145.00',
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_15bcfeed3-1771507445228.png",
   alt: 'Smoked glass statement vase with elongated silhouette, 22cm wide 40cm tall',
-  href: '#product-4',
-  isNew: true
+  href: '/products/P-007',
+  isNew: true,
+  category: 'Home Accessories',
+  description: 'A statement vase in deep smoked glass with an elongated silhouette. Mouth-blown by artisans in the Czech Republic. Ideal for single-stem arrangements.'
 },
 {
   id: 5,
@@ -59,13 +70,16 @@ const newArrivals: Product[] = [
   price: '€ 58.00',
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_17812a797-1769541360215.png",
   alt: 'Coffee table book featuring curated interior design photography',
-  href: '#product-5'
+  href: '/products/P-008',
+  category: 'Coffee Table Books',
+  description: 'A curated collection of the world\'s most considered interiors. 320 pages of photography, essays, and conversations with leading designers.'
 }];
 
 
 export default function NewArrivals() {
   const [visible, setVisible] = useState(false);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [quickViewProduct, setQuickViewProduct] = useState<QuickViewProduct | null>(null);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -78,6 +92,7 @@ export default function NewArrivals() {
   }, []);
 
   return (
+    <>
     <section
       id="new-arrivals"
       ref={ref}
@@ -222,6 +237,7 @@ export default function NewArrivals() {
                   Add to cart
                 </button>
                 <button
+                onClick={() => setQuickViewProduct({ id: product.id, name: product.name, brand: product.brand, price: product.price, image: product.image, alt: product.alt, isNew: product.isNew, category: product.category, description: product.description })}
                 style={{
                   background: 'rgba(255,255,255,0.92)',
                   color: '#060606',
@@ -311,6 +327,9 @@ export default function NewArrivals() {
           .products-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>
-    </section>);
+    </section>
+    {quickViewProduct && <ProductQuickView product={quickViewProduct} onClose={() => setQuickViewProduct(null)} />}
+    </>
+  );
 
 }
