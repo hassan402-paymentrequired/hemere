@@ -58,9 +58,29 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div style={{ fontFamily: 'Poppins, sans-serif', color: '#060606', background: '#ffffff', minHeight: '100vh' }}>
+    <div
+      style={{
+        fontFamily: 'Poppins, sans-serif',
+        color: '#060606',
+        background: '#ffffff',
+        minHeight: '100vh',
+      }}
+    >
       {/* Header */}
-      <header style={{ borderBottom: '1px solid #e8e8e1', padding: '0 40px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, background: '#ffffff', zIndex: 10 }}>
+      <header
+        style={{
+          borderBottom: '1px solid #e8e8e1',
+          padding: '0 40px',
+          height: '64px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          position: 'sticky',
+          top: 0,
+          background: '#ffffff',
+          zIndex: 10,
+        }}
+      >
         <Link
           href="/"
           style={{
@@ -90,7 +110,14 @@ export default function CheckoutPage() {
             gap: '6px',
           }}
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          >
             <polyline points="15 18 9 12 15 6" />
           </svg>
           Back to shop
@@ -112,54 +139,133 @@ export default function CheckoutPage() {
         <form onSubmit={handleSubmit}>
           {/* Contact */}
           <section style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontFamily: '"Proza Libre", sans-serif', fontSize: '20px', fontWeight: 500, color: '#060606', margin: '0 0 24px', letterSpacing: '0.02em' }}>
+            <h2
+              style={{
+                fontFamily: '"Proza Libre", sans-serif',
+                fontSize: '20px',
+                fontWeight: 500,
+                color: '#060606',
+                margin: '0 0 24px',
+                letterSpacing: '0.02em',
+              }}
+            >
               Contact Information
             </h2>
             <div style={{ display: 'grid', gap: '16px' }}>
               <div>
                 <label style={labelStyle}>Email</label>
-                <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="your@email.com" required style={inputStyle} />
+                <input
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="your@email.com"
+                  required
+                  style={inputStyle}
+                />
               </div>
               <div>
                 <label style={labelStyle}>Phone</label>
-                <input name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="+31 6 00 000 000" style={inputStyle} />
+                <input
+                  name="phone"
+                  type="tel"
+                  value={form.phone}
+                  onChange={handleChange}
+                  placeholder="+31 6 00 000 000"
+                  style={inputStyle}
+                />
               </div>
             </div>
           </section>
 
           {/* Shipping */}
           <section style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontFamily: '"Proza Libre", sans-serif', fontSize: '20px', fontWeight: 500, color: '#060606', margin: '0 0 24px', letterSpacing: '0.02em' }}>
+            <h2
+              style={{
+                fontFamily: '"Proza Libre", sans-serif',
+                fontSize: '20px',
+                fontWeight: 500,
+                color: '#060606',
+                margin: '0 0 24px',
+                letterSpacing: '0.02em',
+              }}
+            >
               Shipping Address
             </h2>
             <div style={{ display: 'grid', gap: '16px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                 <div>
                   <label style={labelStyle}>First Name</label>
-                  <input name="firstName" type="text" value={form.firstName} onChange={handleChange} placeholder="First name" required style={inputStyle} />
+                  <input
+                    name="firstName"
+                    type="text"
+                    value={form.firstName}
+                    onChange={handleChange}
+                    placeholder="First name"
+                    required
+                    style={inputStyle}
+                  />
                 </div>
                 <div>
                   <label style={labelStyle}>Last Name</label>
-                  <input name="lastName" type="text" value={form.lastName} onChange={handleChange} placeholder="Last name" required style={inputStyle} />
+                  <input
+                    name="lastName"
+                    type="text"
+                    value={form.lastName}
+                    onChange={handleChange}
+                    placeholder="Last name"
+                    required
+                    style={inputStyle}
+                  />
                 </div>
               </div>
               <div>
                 <label style={labelStyle}>Address</label>
-                <input name="address" type="text" value={form.address} onChange={handleChange} placeholder="Street address" required style={inputStyle} />
+                <input
+                  name="address"
+                  type="text"
+                  value={form.address}
+                  onChange={handleChange}
+                  placeholder="Street address"
+                  required
+                  style={inputStyle}
+                />
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                 <div>
                   <label style={labelStyle}>City</label>
-                  <input name="city" type="text" value={form.city} onChange={handleChange} placeholder="City" required style={inputStyle} />
+                  <input
+                    name="city"
+                    type="text"
+                    value={form.city}
+                    onChange={handleChange}
+                    placeholder="City"
+                    required
+                    style={inputStyle}
+                  />
                 </div>
                 <div>
                   <label style={labelStyle}>Postal Code</label>
-                  <input name="postalCode" type="text" value={form.postalCode} onChange={handleChange} placeholder="Postal code" required style={inputStyle} />
+                  <input
+                    name="postalCode"
+                    type="text"
+                    value={form.postalCode}
+                    onChange={handleChange}
+                    placeholder="Postal code"
+                    required
+                    style={inputStyle}
+                  />
                 </div>
               </div>
               <div>
                 <label style={labelStyle}>Country</label>
-                <select name="country" value={form.country} onChange={handleChange} required style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}>
+                <select
+                  name="country"
+                  value={form.country}
+                  onChange={handleChange}
+                  required
+                  style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}
+                >
                   <option value="">Select country</option>
                   <option value="NL">Netherlands</option>
                   <option value="DE">Germany</option>
@@ -174,7 +280,16 @@ export default function CheckoutPage() {
 
           {/* Payment */}
           <section style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontFamily: '"Proza Libre", sans-serif', fontSize: '20px', fontWeight: 500, color: '#060606', margin: '0 0 24px', letterSpacing: '0.02em' }}>
+            <h2
+              style={{
+                fontFamily: '"Proza Libre", sans-serif',
+                fontSize: '20px',
+                fontWeight: 500,
+                color: '#060606',
+                margin: '0 0 24px',
+                letterSpacing: '0.02em',
+              }}
+            >
               Payment
             </h2>
             <div
@@ -185,8 +300,27 @@ export default function CheckoutPage() {
                 marginBottom: '16px',
               }}
             >
-              <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '11px', fontWeight: 300, color: '#999', letterSpacing: '0.5px', margin: '0 0 16px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <p
+                style={{
+                  fontFamily: 'Poppins, sans-serif',
+                  fontSize: '11px',
+                  fontWeight: 300,
+                  color: '#999',
+                  letterSpacing: '0.5px',
+                  margin: '0 0 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                >
                   <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
                   <line x1="1" y1="10" x2="23" y2="10" />
                 </svg>
@@ -195,20 +329,55 @@ export default function CheckoutPage() {
               <div style={{ display: 'grid', gap: '16px' }}>
                 <div>
                   <label style={labelStyle}>Card Number</label>
-                  <input name="cardNumber" type="text" value={form.cardNumber} onChange={handleChange} placeholder="1234 5678 9012 3456" maxLength={19} required style={inputStyle} />
+                  <input
+                    name="cardNumber"
+                    type="text"
+                    value={form.cardNumber}
+                    onChange={handleChange}
+                    placeholder="1234 5678 9012 3456"
+                    maxLength={19}
+                    required
+                    style={inputStyle}
+                  />
                 </div>
                 <div>
                   <label style={labelStyle}>Name on Card</label>
-                  <input name="cardName" type="text" value={form.cardName} onChange={handleChange} placeholder="Full name as on card" required style={inputStyle} />
+                  <input
+                    name="cardName"
+                    type="text"
+                    value={form.cardName}
+                    onChange={handleChange}
+                    placeholder="Full name as on card"
+                    required
+                    style={inputStyle}
+                  />
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div>
                     <label style={labelStyle}>Expiry Date</label>
-                    <input name="cardExpiry" type="text" value={form.cardExpiry} onChange={handleChange} placeholder="MM / YY" maxLength={7} required style={inputStyle} />
+                    <input
+                      name="cardExpiry"
+                      type="text"
+                      value={form.cardExpiry}
+                      onChange={handleChange}
+                      placeholder="MM / YY"
+                      maxLength={7}
+                      required
+                      style={inputStyle}
+                    />
                   </div>
                   <div>
                     <label style={labelStyle}>CVC</label>
-                    <input name="cardCvc" type="text" value={form.cardCvc} onChange={handleChange} placeholder="CVC" maxLength={4} required style={inputStyle} />
+                    <input
+                      name="cardCvc"
+                      type="text"
+                      value={form.cardCvc}
+                      onChange={handleChange}
+                      placeholder="CVC"
+                      maxLength={4}
+                      required
+                      style={inputStyle}
+                    />
                   </div>
                 </div>
               </div>
@@ -232,21 +401,41 @@ export default function CheckoutPage() {
               transition: 'background 0.2s ease',
             }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLButtonElement).style.background = '#333')}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLButtonElement).style.background = '#060606')}
+            onMouseLeave={(e) =>
+              ((e.currentTarget as HTMLButtonElement).style.background = '#060606')
+            }
           >
-            Place Order — €{total.toLocaleString('en-EU', { minimumFractionDigits: 2 })}
+            Place Order — ₦{total.toLocaleString('en-EU', { minimumFractionDigits: 2 })}
           </button>
         </form>
 
         {/* Right: Order Summary */}
         <div style={{ position: 'sticky', top: '84px' }}>
-          <h2 style={{ fontFamily: '"Proza Libre", sans-serif', fontSize: '20px', fontWeight: 500, color: '#060606', margin: '0 0 24px', letterSpacing: '0.02em' }}>
+          <h2
+            style={{
+              fontFamily: '"Proza Libre", sans-serif',
+              fontSize: '20px',
+              fontWeight: 500,
+              color: '#060606',
+              margin: '0 0 24px',
+              letterSpacing: '0.02em',
+            }}
+          >
             Order Summary
           </h2>
 
           <div style={{ border: '1px solid #e8e8e1', padding: '0' }}>
             {items.length === 0 ? (
-              <div style={{ padding: '32px', textAlign: 'center', color: '#999', fontFamily: 'Poppins, sans-serif', fontSize: '12px', fontWeight: 300 }}>
+              <div
+                style={{
+                  padding: '32px',
+                  textAlign: 'center',
+                  color: '#999',
+                  fontFamily: 'Poppins, sans-serif',
+                  fontSize: '12px',
+                  fontWeight: 300,
+                }}
+              >
                 Your bag is empty
               </div>
             ) : (
@@ -262,8 +451,19 @@ export default function CheckoutPage() {
                   }}
                 >
                   <div style={{ position: 'relative', flexShrink: 0 }}>
-                    <div style={{ width: '60px', height: '68px', background: '#f5f5f3', overflow: 'hidden' }}>
-                      <img src={item.image} alt={item.alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div
+                      style={{
+                        width: '60px',
+                        height: '68px',
+                        background: '#f5f5f3',
+                        overflow: 'hidden',
+                      }}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.alt}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
                     </div>
                     <span
                       style={{
@@ -287,15 +487,42 @@ export default function CheckoutPage() {
                     </span>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '10px', fontWeight: 300, letterSpacing: '1.5px', color: '#999', margin: '0 0 3px', textTransform: 'uppercase' }}>
+                    <p
+                      style={{
+                        fontFamily: 'Poppins, sans-serif',
+                        fontSize: '10px',
+                        fontWeight: 300,
+                        letterSpacing: '1.5px',
+                        color: '#999',
+                        margin: '0 0 3px',
+                        textTransform: 'uppercase',
+                      }}
+                    >
                       {item.category}
                     </p>
-                    <p style={{ fontFamily: '"Proza Libre", sans-serif', fontSize: '14px', fontWeight: 500, color: '#060606', margin: 0 }}>
+                    <p
+                      style={{
+                        fontFamily: '"Proza Libre", sans-serif',
+                        fontSize: '14px',
+                        fontWeight: 500,
+                        color: '#060606',
+                        margin: 0,
+                      }}
+                    >
                       {item.name}
                     </p>
                   </div>
-                  <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '13px', fontWeight: 400, color: '#060606', margin: 0, flexShrink: 0 }}>
-                    €{(item.price * item.quantity).toLocaleString('en-EU')}
+                  <p
+                    style={{
+                      fontFamily: 'Poppins, sans-serif',
+                      fontSize: '13px',
+                      fontWeight: 400,
+                      color: '#060606',
+                      margin: 0,
+                      flexShrink: 0,
+                    }}
+                  >
+                    ₦{(item.price * item.quantity).toLocaleString('en-EU')}
                   </p>
                 </div>
               ))
@@ -303,17 +530,86 @@ export default function CheckoutPage() {
 
             {/* Totals */}
             <div style={{ padding: '20px 24px', borderTop: '1px solid #e8e8e1' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '12px', fontWeight: 300, color: '#666', letterSpacing: '0.5px' }}>Subtotal</span>
-                <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '13px', fontWeight: 400, color: '#060606' }}>€{subtotal.toLocaleString('en-EU', { minimumFractionDigits: 2 })}</span>
+              <div
+                style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '12px',
+                    fontWeight: 300,
+                    color: '#666',
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  Subtotal
+                </span>
+                <span
+                  style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '13px',
+                    fontWeight: 400,
+                    color: '#060606',
+                  }}
+                >
+                  ₦{subtotal.toLocaleString('en-EU', { minimumFractionDigits: 2 })}
+                </span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '12px', fontWeight: 300, color: '#666', letterSpacing: '0.5px' }}>Shipping</span>
-                <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '12px', fontWeight: 300, color: '#999' }}>Calculated at checkout</span>
+              <div
+                style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '12px',
+                    fontWeight: 300,
+                    color: '#666',
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  Shipping
+                </span>
+                <span
+                  style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '12px',
+                    fontWeight: 300,
+                    color: '#999',
+                  }}
+                >
+                  Calculated at checkout
+                </span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '16px', borderTop: '1px solid #e8e8e1' }}>
-                <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '13px', fontWeight: 500, color: '#060606', letterSpacing: '1px', textTransform: 'uppercase' }}>Total</span>
-                <span style={{ fontFamily: '"Proza Libre", sans-serif', fontSize: '18px', fontWeight: 600, color: '#060606' }}>€{total.toLocaleString('en-EU', { minimumFractionDigits: 2 })}</span>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  paddingTop: '16px',
+                  borderTop: '1px solid #e8e8e1',
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    color: '#060606',
+                    letterSpacing: '1px',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Total
+                </span>
+                <span
+                  style={{
+                    fontFamily: '"Proza Libre", sans-serif',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: '#060606',
+                  }}
+                >
+                  ₦{total.toLocaleString('en-EU', { minimumFractionDigits: 2 })}
+                </span>
               </div>
             </div>
           </div>
@@ -323,11 +619,21 @@ export default function CheckoutPage() {
             {[
               { icon: '🔒', text: 'Secure SSL encryption' },
               { icon: '↩', text: 'Free returns within 30 days' },
-              { icon: '📦', text: 'Free shipping on orders over €500' },
+              { icon: '📦', text: 'Free shipping on orders over ₦500' },
             ].map((badge) => (
               <div key={badge.text} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <span style={{ fontSize: '14px' }}>{badge.icon}</span>
-                <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '11px', fontWeight: 300, color: '#666', letterSpacing: '0.5px' }}>{badge.text}</span>
+                <span
+                  style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '11px',
+                    fontWeight: 300,
+                    color: '#666',
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  {badge.text}
+                </span>
               </div>
             ))}
           </div>

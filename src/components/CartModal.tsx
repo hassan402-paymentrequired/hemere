@@ -95,7 +95,14 @@ export default function CartModal() {
               justifyContent: 'center',
             }}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
@@ -120,7 +127,14 @@ export default function CartModal() {
                 letterSpacing: '1px',
               }}
             >
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              >
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <path d="M16 10a4 4 0 0 1-8 0" />
@@ -260,7 +274,7 @@ export default function CartModal() {
                       letterSpacing: '0.5px',
                     }}
                   >
-                    €{(item.price * item.quantity).toLocaleString('en-EU')}
+                    ₦{(item.price * item.quantity).toLocaleString('en-EU')}
                   </p>
                 </div>
               </div>
@@ -306,7 +320,7 @@ export default function CartModal() {
                   letterSpacing: '0.5px',
                 }}
               >
-                €{subtotal.toLocaleString('en-EU', { minimumFractionDigits: 2 })}
+                ₦{subtotal.toLocaleString('en-EU', { minimumFractionDigits: 2 })}
               </span>
             </div>
 
@@ -341,8 +355,12 @@ export default function CartModal() {
                 marginBottom: '12px',
                 transition: 'background 0.2s ease',
               }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLButtonElement).style.background = '#333')}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLButtonElement).style.background = '#060606')}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLButtonElement).style.background = '#333')
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLButtonElement).style.background = '#060606')
+              }
             >
               Proceed to Checkout
             </button>
